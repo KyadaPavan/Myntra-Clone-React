@@ -1,0 +1,1 @@
+This React JS-based Myntra Clone allows users to seamlessly add products to their shopping cart. Additionally, it provides a comprehensive overview of the total amount to be paid, enhancing the shopping experience by offering a user-friendly and feature-rich platform.
