@@ -2,6 +2,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { bagActions } from "../store/bagSlice";
 import { Link } from "react-router-dom";
 import { FaArrowRight } from "react-icons/fa6";
+import { wishlistActions } from "../store/wishlistSlice";
+import { FaRegHeart } from "react-icons/fa6";
 
 const HomeItem = ({ item }) => {
   const dispatch = useDispatch();
@@ -9,6 +11,9 @@ const HomeItem = ({ item }) => {
   const elementFound = bagItems.indexOf(item.id) >= 0;
   const handelAddToBag = () => {
     dispatch(bagActions.addToBag(item.id));
+  };
+  const handelAddToWishlist = () => {
+    dispatch(wishlistActions.addToWishlist(item.id));
   };
   const handelRemoveFromBag = () => {
     dispatch(bagActions.removeFromBag(item.id));
@@ -40,9 +45,13 @@ const HomeItem = ({ item }) => {
           </Link>
         </div>
       ) : (
-        <button className="btn-add-bag" onClick={handelAddToBag}>
-          Add to Bag
-        </button>
+        <div className="bag-buttons">
+          <button className="btn-add-bag" onClick={handelAddToBag}>
+            Add to Bag
+          </button>
+
+          <FaRegHeart className="wishlist" onClick={handelAddToWishlist} />
+        </div>
       )}
     </div>
   );

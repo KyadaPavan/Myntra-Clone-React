@@ -44,10 +44,10 @@ const Header = () => {
           <span className="action_name">Profile</span>
         </div>
 
-        <div className="action_container">
+        <Link to="/wishlist" className="action_container">
           <FaRegHeart className="icons" />
           <span className="action_name">Wishlist</span>
-        </div>
+        </Link>
 
         <Link className="action_container" to="/bag">
           <BsBag className="icons" />
